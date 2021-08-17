@@ -35,7 +35,7 @@ function Header() {
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
                 <HeaderOption Icon={ChatIcon} title="Messaging"/>
                 <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
-                <HeaderOption avatar="https://www.minervastrategies.com/wp-content/uploads/2016/03/default-avatar.jpg" title="Me" onClick={logoutOfApp}/>
+                <HeaderOption avatar={true} title="Me" onClick={logoutOfApp}/>
             </div>
         </div>
     )
