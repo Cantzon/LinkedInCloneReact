@@ -13,6 +13,19 @@ function Login() {
 
     const loginToApp = (e) => {
         e.preventDefault();
+
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(userAuth => {
+                dispatch(
+                    dispatch(login({
+                        email: userAuth.user.email,
+                        uid: userAuth.user.uid,
+                        displayName: userAuth.user.displayName,
+                        photoUrl: userAuth.user.photoURL,
+                    }))
+                )
+            }).catch(error => alert(error));
     };
     const register = () => {
         if (!name || !email || !password) {
@@ -34,7 +47,7 @@ function Login() {
                         }))
                     })
             }
-        ).catch(error => alert(error.message));
+        ).catch(error => alert(error));
     };
 
     return (
